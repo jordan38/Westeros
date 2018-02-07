@@ -3,4 +3,4 @@
 # En règle générale, les "#" servent à mettre en commentaire le texte qui suit comme ici
 echo Mon premier script
 echo Liste des fichiers :
-ls -la
+ll

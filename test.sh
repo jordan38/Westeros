@@ -1,6 +1,5 @@
 #!/bin/bash
-# Indique au système que l'argument qui suit est le programme utilisé pour exécuter ce fichier
-# En règle générale, les "#" servent à mettre en commentaire le texte qui suit comme ici
-echo Mon premier script
-echo Liste des fichiers :
-ll
+
+
+# Ajoute l'utilisateur au groupe docker
+sudo usermod -a -G docker $USER

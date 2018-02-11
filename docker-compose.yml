@@ -7,4 +7,4 @@ services:
       - PUID=1000
       - TZ="Europe/Paris"
     volumes:
-      - /opt/containers/ddclient/config:/config
+      - /opt/dockers/ddclient/config:/config

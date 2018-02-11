@@ -7,7 +7,11 @@ UTILISATEUR_COURANT=whoami
 
 sudo apt-get update
 
+# Serveur SSH
+
 sudo apt install openssh-server
+
+# Docker
 
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
@@ -21,3 +25,30 @@ sudo apt-get install docker-ce
 
 # Ajoute l'utilisateur au groupe docker
 sudo usermod -a -G docker $USER
+
+# Portainer
+
+# mise en place de docker-compose
+
+sudo curl -L --fail https://github.com/docker/compose/releases/download/1.19.0/run.sh -o /usr/local/bin/docker-compose (destination)
+sudo chmod +x /usr/local/bin/docker-compose
+
+# Recuperer le docker-compose
+
+wget https://raw.githubusercontent.com/jordan38/Westeros/master/docker-compose.yml -O /repertoire-destination
+
+# Mettre en place les fichiers de configurations
+## ddclient
+
+## dnsmasq
+
+## nginx
+
+# Personnaliser la ligne de commande + zsch https://github.com/robbyrussell/oh-my-zsh + autocomplete
+
+# Test des services ?
+
+# Back up container
+
+# reboot
+sudo reboot

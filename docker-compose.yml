@@ -1,0 +1,10 @@
+version: "3"
+services:
+  ddclient:
+    image: linuxserver/ddclient
+    environment:
+      - PGID=1000
+      - PUID=1000
+      - TZ="Europe/Paris"
+    volumes:
+      - /opt/containers/ddclient/config:/config

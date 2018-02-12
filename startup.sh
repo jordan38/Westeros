@@ -35,7 +35,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 # Recuperer le docker-compose
 
-wget https://raw.githubusercontent.com/jordan38/Westeros/master/docker-compose.yml -O /repertoire-destination
+wget https://raw.githubusercontent.com/jordan38/Westeros/master/docker-compose.yml -O /tmp
 
 # Mettre en place les fichiers de configurations
 ## ddclient

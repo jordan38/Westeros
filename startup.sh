@@ -50,6 +50,3 @@ wget https://raw.githubusercontent.com/jordan38/Westeros/master/docker-compose.y
 # Test des services ?
 
 # Back up container
-
-# reboot
-sudo reboot

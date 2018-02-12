@@ -9,10 +9,11 @@ sudo apt-get update
 
 # Serveur SSH
 
+echo 'Installation SSH'
 sudo apt install openssh-server
 
 # Docker
-
+echo 'Installation Docker'
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
 sudo apt-key fingerprint 0EBFCD88
@@ -29,7 +30,7 @@ sudo usermod -a -G docker $USER
 # Portainer
 
 # mise en place de docker-compose
-
+echo 'Installation Docker compose'
 sudo curl -L --fail https://github.com/docker/compose/releases/download/1.19.0/run.sh -o /usr/local/bin/docker-compose (destination)
 sudo chmod +x /usr/local/bin/docker-compose
 

@@ -31,7 +31,7 @@ sudo usermod -a -G docker $USER
 
 # mise en place de docker-compose
 echo 'Installation Docker compose'
-sudo curl -L --fail https://github.com/docker/compose/releases/download/1.19.0/run.sh -o /usr/local/bin/docker-compose (destination)
+sudo curl -L --fail https://github.com/docker/compose/releases/download/1.19.0/run.sh -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 
 # Recuperer le docker-compose

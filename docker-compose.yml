@@ -1,6 +1,7 @@
 version: "3"
 services:
   ddclient:
+    container_name: ddclient
     image: linuxserver/ddclient
     environment:
       - PGID=1000

@@ -2,4 +2,7 @@
 
 Mise en place du reseau Westeros
 
-wget https://raw.githubusercontent.com/jordan38/Westeros/master/test.sh | sh
+curl https://raw.githubusercontent.com/jordan38/Westeros/master/startup.sh | bash
+
+Stack :
+* ddclient : permet de mettre à jour un nom de domaine avec une IP dynamique

@@ -2,9 +2,10 @@
 
 UTILISATEUR_COURANT=$(whoami)
 
+sudo apt-get update
+
 ## Nano
 echo "Installation Nano"
-sudo apt-get update
 
 sudo apt-get install nano
 
@@ -33,7 +34,7 @@ echo "Installation Docker compose"
 sudo curl -L --fail https://github.com/docker/compose/releases/download/1.19.0/run.sh -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 
-## Recuperer le docker-compose
+## Recuperer le docker-compose.yml
 
 wget https://raw.githubusercontent.com/jordan38/Westeros/master/docker-compose.yml -o /tmp/docker-compose.yml
 

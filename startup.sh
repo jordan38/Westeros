@@ -1,20 +1,20 @@
 #!/bin/bash
 
-UTILISATEUR_COURANT=whoami
+UTILISATEUR_COURANT=$(whoami)
 
 ## Nano
-echo 'Installation Nano'
+echo "Installation Nano"
 sudo apt-get update
 
 sudo apt-get install nano
 
 ## Serveur SSH
 
-echo 'Installation SSH'
+echo "Installation SSH"
 sudo apt install openssh-server
 
 ## Docker
-echo 'Installation Docker'
+echo "Installation Docker"
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
 sudo apt-key fingerprint 0EBFCD88

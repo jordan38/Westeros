@@ -9,4 +9,3 @@ services:
       - TZ="Europe/Paris"
     volumes:
       - /opt/dockers/ddclient/config:/config
-      - /var/log/ddclient:/var/log/ddclient

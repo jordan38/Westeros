@@ -1,18 +1,19 @@
 #!/bin/bash
 
-# Constante
 UTILISATEUR_COURANT=whoami
 
-# Configurer nano
-
+## Nano
+echo 'Installation Nano'
 sudo apt-get update
 
-# Serveur SSH
+sudo apt-get install nano
+
+## Serveur SSH
 
 echo 'Installation SSH'
 sudo apt install openssh-server
 
-# Docker
+## Docker
 echo 'Installation Docker'
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
@@ -24,29 +25,15 @@ sudo apt-get update
 
 sudo apt-get install docker-ce
 
-# Ajoute l'utilisateur au groupe docker
-sudo usermod -a -G docker $USER
+## Ajoute l'utilisateur au groupe docker
+sudo usermod -a -G docker $UTILISATEUR_COURANT
 
-# Portainer
-
-# mise en place de docker-compose
+## mise en place de docker-compose
 echo 'Installation Docker compose'
 sudo curl -L --fail https://github.com/docker/compose/releases/download/1.19.0/run.sh -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 
-# Recuperer le docker-compose
+## Recuperer le docker-compose
 
-wget https://raw.githubusercontent.com/jordan38/Westeros/master/docker-compose.yml -O /tmp
+wget https://raw.githubusercontent.com/jordan38/Westeros/master/docker-compose.yml -o /tmp/docker-compose.yml
 
-# Mettre en place les fichiers de configurations
-## ddclient
-
-## dnsmasq
-
-## nginx
-
-# Personnaliser la ligne de commande + zsch https://github.com/robbyrussell/oh-my-zsh + autocomplete
-
-# Test des services ?
-
-# Back up container

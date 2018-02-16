@@ -1,11 +1,31 @@
 version: "3"
 services:
+  nginx:
+      container_name: nginx
+      image: xataz/nginx
+      ports:
+        - "80:8080"
+        - "443:8443"
+      environment:
+            - GID=1000
+            - UID=1000
+      volumes:
+        - /var/log/nginx:/log
+        - /opt/dockers/nginx/conf:/nginx/conf
+        - /opt/dockers/nginx/site-enable:/sites-enabled
+      depends_on:
+        - ddclient
+      restart: always
+
   ddclient:
     container_name: ddclient
     image: linuxserver/ddclient
     environment:
-      - PGID=1000
-      - PUID=1000
+      - PGID=1001
+      - PUID=1001
       - TZ="Europe/Paris"
     volumes:
       - /opt/dockers/ddclient/config:/config
+    restart: always
+
+

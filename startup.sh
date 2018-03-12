@@ -14,7 +14,7 @@ apt-get -y install nano
 ## Serveur SSH
 
 echo "Installation SSH"
-apt install openssh-server
+apt-get -y install openssh-server
 
 ## Docker
 echo "Installation Docker"

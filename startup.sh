@@ -9,7 +9,7 @@ apt-get update
 ## Nano
 echo "Installation Nano"
 
-apt-get install nano
+apt-get -y install nano
 
 ## Serveur SSH
 

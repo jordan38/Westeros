@@ -26,7 +26,7 @@ add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(
 
 apt-get update
 
-apt-get install docker-ce
+apt-get -y install docker-ce
 
 ## Ajoute l'utilisateur au groupe docker
 usermod -a -G docker $UTILISATEUR_COURANT

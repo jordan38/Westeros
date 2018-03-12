@@ -33,17 +33,19 @@ usermod -a -G docker $UTILISATEUR_COURANT
 
 ## Mise en place de docker-compose
 echo "Installation Docker compose"
-curl -L --fail https://github.com/docker/compose/releases/download/1.19.0/run.sh -o /usr/local/bin/docker-compose
-chmod +x /usr/local/bin/docker-compose
+#curl -L --fail https://github.com/docker/compose/releases/download/1.19.0/run.sh -o /usr/local/bin/docker-compose
+#chmod +x /usr/local/bin/docker-compose
+
+apt-get -y install docker-compose
 
 ## Récuperer le fichier de conf de ddclient
 echo "Mise en place des fichiers de configuration"
 
 mkdir -p $DDCLIENT_CHEMIN
-wget https://raw.githubusercontent.com/jordan38/Westeros/master/ddclient/ddclient.conf $DDCLIENT_CHEMIN
+curl https://raw.githubusercontent.com/jordan38/Westeros/master/ddclient/ddclient.conf -o $DDCLIENT_CHEMIN
 
 ## Recuperer le docker-compose.yml
 echo "Mise en place du docker compose file"
 
-sudo mkdir -p $COMPOSE_FICHIER_CHEMIN
-wget https://github.com/jordan38/Westeros/blob/master/docker/docker-compose.yml $COMPOSE_FICHIER_CHEMIN
+mkdir -p $COMPOSE_FICHIER_CHEMIN
+curl https://github.com/jordan38/Westeros/blob/master/docker/docker-compose.yml -o $COMPOSE_FICHIER_CHEMIN

@@ -42,10 +42,10 @@ apt-get -y install docker-compose
 echo "Mise en place des fichiers de configuration"
 
 mkdir -p $DDCLIENT_CHEMIN
-curl https://raw.githubusercontent.com/jordan38/Westeros/master/ddclient/ddclient.conf -o $DDCLIENT_CHEMIN
+curl https://raw.githubusercontent.com/jordan38/Westeros/master/ddclient/ddclient.conf -P $DDCLIENT_CHEMIN
 
 ## Recuperer le docker-compose.yml
 echo "Mise en place du docker compose file"
 
 mkdir -p $COMPOSE_FICHIER_CHEMIN
-curl https://github.com/jordan38/Westeros/blob/master/docker/docker-compose.yml -o $COMPOSE_FICHIER_CHEMIN
+wget https://raw.githubusercontent.com/jordan38/Westeros/master/docker/docker-compose.yml -P $COMPOSE_FICHIER_CHEMIN

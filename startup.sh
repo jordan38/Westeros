@@ -33,10 +33,10 @@ usermod -a -G docker $UTILISATEUR_COURANT
 
 ## Mise en place de docker-compose
 echo "Installation Docker compose"
-#curl -L --fail https://github.com/docker/compose/releases/download/1.19.0/run.sh -o /usr/local/bin/docker-compose
-#chmod +x /usr/local/bin/docker-compose
+curl -L --fail https://github.com/docker/compose/releases/download/1.19.0/run.sh -o /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
 
-apt-get -y install docker-compose
+#apt-get -y install docker-compose
 
 ## Récuperer le fichier de conf de ddclient
 echo "Mise en place des fichiers de configuration"

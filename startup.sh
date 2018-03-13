@@ -49,5 +49,3 @@ echo "Mise en place du docker compose file"
 
 mkdir -p $COMPOSE_FICHIER_CHEMIN
 wget https://raw.githubusercontent.com/jordan38/Westeros/master/docker/docker-compose.yml -P $COMPOSE_FICHIER_CHEMIN
-
-reboot now

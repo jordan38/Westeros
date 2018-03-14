@@ -25,8 +25,6 @@ services:
       - /var/nextcloud/apps:/var/www/html/apps
     depends_on:
       - database
-      - web
-      - network
     restart: always
       
   network:

@@ -2,7 +2,7 @@
 
 UTILISATEUR_COURANT=$(whoami)
 DDCLIENT_CHEMIN=/opt/dockers/ddclient/config
-COMPOSE_FICHIER_CHEMIN=~/devs
+SCRIPT_MAINTENANCE_DOSSIER=~/devs
 
 apt-get update
 
@@ -52,5 +52,10 @@ wget https://raw.githubusercontent.com/jordan38/Westeros/master/ddclient/ddclien
 ## Recuperer le docker-compose.yml
 echo "Mise en place du docker compose file"
 
-mkdir -p $COMPOSE_FICHIER_CHEMIN
-wget https://raw.githubusercontent.com/jordan38/Westeros/master/docker/docker-compose.yml -P $COMPOSE_FICHIER_CHEMIN
+mkdir -p $SCRIPT_MAINTENANCE_DOSSIER
+wget https://raw.githubusercontent.com/jordan38/Westeros/master/docker/docker-compose.yml -P $SCRIPT_MAINTENANCE_DOSSIER
+
+## Mise en place des scripts de maintenance
+echo "Mise en place des scripts de maintenance"
+
+wget https://raw.githubusercontent.com/jordan38/Westeros/master/update.sh -P $SCRIPT_MAINTENANCE_DOSSIER

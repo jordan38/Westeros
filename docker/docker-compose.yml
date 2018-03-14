@@ -47,7 +47,7 @@ services:
         - /opt/dockers/nginx/site-enable:/sites-enabled
       restart: always
       
-  mnt:
+  maint:
     container_name: portainer
     image: portainer/portainer
     ports:

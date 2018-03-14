@@ -1,6 +1,6 @@
 version: "3"
 services:
-  database:
+  db:
     container_name: mysql
     image: mysql
     ports:
@@ -14,7 +14,7 @@ services:
       - MYSQL_USER=root
     restart: always
   
-  application:  
+  app:  
     container_name: nextcloud
     image: nextcloud
     ports:
@@ -27,7 +27,7 @@ services:
       - database
     restart: always
       
-  network:
+  net:
     container_name: ddclient
     image: linuxserver/ddclient
     environment:
@@ -47,7 +47,7 @@ services:
         - /opt/dockers/nginx/site-enable:/sites-enabled
       restart: always
       
-  maintenance:
+  mnt:
     container_name: portainer
     image: portainer/portainer
     ports:

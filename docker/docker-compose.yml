@@ -1,8 +1,8 @@
 version: "3"
 services:
   database:
-    container_name: mariadb
-    image: mariadb
+    container_name: mysql
+    image: mysql
     volumes:
       - db:/var/lib/mysql
     environment:

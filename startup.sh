@@ -16,6 +16,11 @@ apt-get -y install nano
 echo "Installation SSH"
 apt-get -y install openssh-server
 
+## Htop
+echo "Installation htop"
+
+apt-get -y install htop
+
 ## Docker
 echo "Installation Docker"
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -

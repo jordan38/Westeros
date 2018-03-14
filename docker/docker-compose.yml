@@ -4,7 +4,7 @@ services:
     container_name: mysql
     image: mysql
     ports:
-      - 9090:8080
+      - 3306:3306
     volumes:
       - /var/mysql:/var/lib/mysql
     environment:

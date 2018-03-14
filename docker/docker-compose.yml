@@ -24,7 +24,7 @@ services:
       - /opt/dockers/nextcloud/config:/var/www/html/config
       - /var/nextcloud/apps:/var/www/html/apps
     depends_on:
-      - database
+      - db
     restart: always
       
   net:

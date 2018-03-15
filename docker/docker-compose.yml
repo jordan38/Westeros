@@ -8,10 +8,10 @@ services:
     volumes:
       - /var/mysql:/var/lib/mysql
     environment:
-      - MYSQL_PASSWORD=
-      - MYSQL_ALLOW_EMPTY_PASSWORD=true
+      - MYSQL_ROOT_PASSWORD=test 
       - MYSQL_DATABASE=nextcloud
-      - MYSQL_USER=root
+      - MYSQL_USER=test 
+      - MYSQL_PASSWORD=test
     restart: always
   
   app:  

@@ -2,9 +2,10 @@
 
 UTILISATEUR_COURANT=$(whoami)
 
+## Lancement du script
 apt-get update
 
-## Nano
+## Installation Nano
 echo -e "Installation Nano"
 
 apt-get -y install nano

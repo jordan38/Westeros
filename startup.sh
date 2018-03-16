@@ -54,14 +54,15 @@ NGINX_CONF_CHEMIN=/opt/dockers/nginx/conf
 NGINX_SITES_AVAILABLE_CHEMIN=/opt/dockers/nginx/conf/sites-available
 NGINX_SITES_ENABLED_CHEMIN=/opt/dockers/nginx/conf/sites-enabled
 
+# Les fichiers de configurations globaux
 mkdir -p $NGINX_CONF_CHEMIN
 wget https://raw.githubusercontent.com/jordan38/Westeros/master/nginx/conf/nginx.conf -P $NGINX_CONF_CHEMIN
 wget https://raw.githubusercontent.com/jordan38/Westeros/master/nginx/conf/mime.types $NGINX_CONF_CHEMIN
-
+# Les fichiers de configuration des servers block
 mkdir -p $NGINX_SITES_AVAILABLE_CHEMIN
 wget https://raw.githubusercontent.com/jordan38/Westeros/master/nginx/sites-available/nextcloud.eastwatch.me -P $NGINX_SITES_AVAILABLE_CHEMIN
 wget https://raw.githubusercontent.com/jordan38/Westeros/master/nginx/sites-available/portainer.eastwatch.me -P $NGINX_SITES_AVAILABLE_CHEMIN
-
+# Les fichiers de configuration des servers block activés
 mkdir -p $NGINX_SITES_ENABLED_CHEMIN
 ln -s /opt/dockers/nginx/conf/sites-available/nextcloud.eastwatch.me /opt/dockers/nginx/conf/sites-enabled/nextcloud.eastwatch.me
 ln -s /opt/dockers/nginx/conf/sites-available/portainer.eastwatch.me /opt/dockers/nginx/conf/sites-enabled/portainer.eastwatch.me

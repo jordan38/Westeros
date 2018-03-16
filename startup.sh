@@ -3,8 +3,6 @@
 printf '\e[1;34m%-6s\e[m' "This is text"
 
 UTILISATEUR_COURANT=$(whoami)
-DDCLIENT_CHEMIN=/opt/dockers/ddclient/config
-SCRIPT_MAINTENANCE_DOSSIER=~/devs
 
 apt-get update
 
@@ -45,6 +43,7 @@ chmod +x /usr/local/bin/docker-compose
 
 ## Récuperer le fichier de conf de ddclient
 echo "Mise en place des fichiers de configuration"
+DDCLIENT_CHEMIN=/opt/dockers/ddclient/config
 
 mkdir -p $DDCLIENT_CHEMIN
 wget https://raw.githubusercontent.com/jordan38/Westeros/master/ddclient/ddclient.conf -P $DDCLIENT_CHEMIN
@@ -77,5 +76,6 @@ wget -O https://raw.githubusercontent.com/jordan38/Westeros/master/docker/docker
 
 ## Mise en place des scripts de maintenance
 echo "Mise en place des scripts de maintenance"
+SCRIPT_MAINTENANCE_DOSSIER=~/devs
 
 wget -O https://raw.githubusercontent.com/jordan38/Westeros/master/update.sh -P $SCRIPT_MAINTENANCE_DOSSIER

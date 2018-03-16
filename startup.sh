@@ -45,7 +45,7 @@ chmod +x /usr/local/bin/docker-compose
 echo "Mise en place des fichiers de configuration"
 
 mkdir -p $DDCLIENT_CHEMIN
-wget -O https://raw.githubusercontent.com/jordan38/Westeros/master/ddclient/ddclient.conf -P $DDCLIENT_CHEMIN
+wget https://raw.githubusercontent.com/jordan38/Westeros/master/ddclient/ddclient.conf -P $DDCLIENT_CHEMIN
 
 ## Récuperer les fichiers nginx
 echo "Mise en place des fichiers nginx"

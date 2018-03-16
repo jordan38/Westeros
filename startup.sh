@@ -50,15 +50,17 @@ wget https://raw.githubusercontent.com/jordan38/Westeros/master/ddclient/ddclien
 ## Récuperer les fichiers nginx
 echo "Mise en place des fichiers nginx"
 
-mkdir -p 
-wget -p nginx/conf
-wget -p nginx/conf
-mkdir -p
-wget -p nginx/site-available
-wget -p nginx/site-available
-mkdir -p site-enabled
-ln -s /etc/nginx/sites-available/.me /etc/nginx/sites-enabled/.me
-ln -s /etc/nginx/sites-available/.me /etc/nginx/sites-enabled/.me
+mkdir -p $NGINX_CONF_CHEMIN
+wget https://raw.githubusercontent.com/jordan38/Westeros/master/nginx/conf/nginx.conf -P $NGINX_CONF_CHEMIN
+wget https://raw.githubusercontent.com/jordan38/Westeros/master/nginx/conf/mime.types $NGINX_CONF_CHEMIN
+
+mkdir -p $NGINX_SITES_AVAILABLE_CHEMIN
+wget https://raw.githubusercontent.com/jordan38/Westeros/master/nginx/sites-available/nextcloud.eastwatch.me -P $NGINX_SITES_AVAILABLE_CHEMIN
+wget https://raw.githubusercontent.com/jordan38/Westeros/master/nginx/sites-available/portainer.eastwatch.me -P $NGINX_SITES_AVAILABLE_CHEMIN
+
+mkdir -p $NGINX_SITES_ENABLED_CHEMIN
+ln -s /etc/nginx/sites-available/nextcloud.eastwatch.me /etc/nginx/sites-enabled/nextcloud.eastwatch.me
+ln -s /etc/nginx/sites-available/portainer.eastwatch.me /etc/nginx/sites-enabled/portainer.eastwatch.me
 
 ## Recuperer le docker-compose.yml
 echo "Mise en place du docker compose file"

@@ -1,13 +1,11 @@
 #!/bin/bash
 
-printf '\e[1;34m%-6s\e[m' "This is text"
-
 UTILISATEUR_COURANT=$(whoami)
 
 apt-get update
 
 ## Nano
-echo "Installation Nano"
+echo -e "Installation Nano"
 
 apt-get -y install nano
 

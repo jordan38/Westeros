@@ -56,7 +56,7 @@ NGINX_SITES_ENABLED_CHEMIN=/opt/dockers/nginx/conf/sites-enabled
 
 # Les fichiers de configurations globaux
 mkdir -p $NGINX_CONF_CHEMIN
-wget https://raw.githubusercontent.com/jordan38/Westeros/master/nginx/conf/nginx.conf -P $NGINX_CONF_CHEMIN
+wget -O https://raw.githubusercontent.com/jordan38/Westeros/master/nginx/conf/nginx.conf -P $NGINX_CONF_CHEMIN
 wget https://raw.githubusercontent.com/jordan38/Westeros/master/nginx/conf/mime.types -P $NGINX_CONF_CHEMIN
 # Les fichiers de configuration des servers block
 mkdir -p $NGINX_SITES_AVAILABLE_CHEMIN

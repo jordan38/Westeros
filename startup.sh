@@ -45,7 +45,7 @@ chmod +x /usr/local/bin/docker-compose
 echo "Mise en place des fichiers de configuration"
 
 mkdir -p $DDCLIENT_CHEMIN
-wget https://raw.githubusercontent.com/jordan38/Westeros/master/ddclient/ddclient.conf -P $DDCLIENT_CHEMIN
+wget -O https://raw.githubusercontent.com/jordan38/Westeros/master/ddclient/ddclient.conf -P $DDCLIENT_CHEMIN
 
 ## Récuperer les fichiers nginx
 echo "Mise en place des fichiers nginx"
@@ -57,23 +57,23 @@ NGINX_SITES_ENABLED_CHEMIN=/opt/dockers/nginx/conf/sites-enabled
 # Les fichiers de configurations globaux
 mkdir -p $NGINX_CONF_CHEMIN
 wget -O https://raw.githubusercontent.com/jordan38/Westeros/master/nginx/conf/nginx.conf -P $NGINX_CONF_CHEMIN
-wget https://raw.githubusercontent.com/jordan38/Westeros/master/nginx/conf/mime.types -P $NGINX_CONF_CHEMIN
+wget -O https://raw.githubusercontent.com/jordan38/Westeros/master/nginx/conf/mime.types -P $NGINX_CONF_CHEMIN
 # Les fichiers de configuration des servers block
 mkdir -p $NGINX_SITES_AVAILABLE_CHEMIN
-wget https://raw.githubusercontent.com/jordan38/Westeros/master/nginx/sites-available/nextcloud.eastwatch.me -P $NGINX_SITES_AVAILABLE_CHEMIN
-wget https://raw.githubusercontent.com/jordan38/Westeros/master/nginx/sites-available/portainer.eastwatch.me -P $NGINX_SITES_AVAILABLE_CHEMIN
+wget -O https://raw.githubusercontent.com/jordan38/Westeros/master/nginx/sites-available/nextcloud.eastwatch.me.conf -P $NGINX_SITES_AVAILABLE_CHEMIN
+wget -O https://raw.githubusercontent.com/jordan38/Westeros/master/nginx/sites-available/portainer.eastwatch.me.conf -P $NGINX_SITES_AVAILABLE_CHEMIN
 # Les fichiers de configuration des servers block activés
 mkdir -p $NGINX_SITES_ENABLED_CHEMIN
-ln -s /opt/dockers/nginx/conf/sites-available/nextcloud.eastwatch.me /opt/dockers/nginx/conf/sites-enabled/nextcloud.eastwatch.me
-ln -s /opt/dockers/nginx/conf/sites-available/portainer.eastwatch.me /opt/dockers/nginx/conf/sites-enabled/portainer.eastwatch.me
+ln -s /opt/dockers/nginx/conf/sites-available/nextcloud.eastwatch.me.conf /opt/dockers/nginx/conf/sites-enabled/nextcloud.eastwatch.me.conf
+ln -s /opt/dockers/nginx/conf/sites-available/portainer.eastwatch.me.conf /opt/dockers/nginx/conf/sites-enabled/portainer.eastwatch.me.conf
 
 ## Recuperer le docker-compose.yml
 echo "Mise en place du docker compose file"
 
 mkdir -p $SCRIPT_MAINTENANCE_DOSSIER
-wget https://raw.githubusercontent.com/jordan38/Westeros/master/docker/docker-compose.yml -P $SCRIPT_MAINTENANCE_DOSSIER
+wget -O https://raw.githubusercontent.com/jordan38/Westeros/master/docker/docker-compose.yml -P $SCRIPT_MAINTENANCE_DOSSIER
 
 ## Mise en place des scripts de maintenance
 echo "Mise en place des scripts de maintenance"
 
-wget https://raw.githubusercontent.com/jordan38/Westeros/master/update.sh -P $SCRIPT_MAINTENANCE_DOSSIER
+wget -O https://raw.githubusercontent.com/jordan38/Westeros/master/update.sh -P $SCRIPT_MAINTENANCE_DOSSIER

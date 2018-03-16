@@ -41,13 +41,24 @@ echo "Installation Docker compose"
 curl -L --fail https://github.com/docker/compose/releases/download/1.19.0/run.sh -o /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
 
-#apt-get -y install docker-compose
-
 ## Récuperer le fichier de conf de ddclient
 echo "Mise en place des fichiers de configuration"
 
 mkdir -p $DDCLIENT_CHEMIN
 wget https://raw.githubusercontent.com/jordan38/Westeros/master/ddclient/ddclient.conf -P $DDCLIENT_CHEMIN
+
+## Récuperer les fichiers nginx
+echo "Mise en place des fichiers nginx"
+
+mkdir -p 
+wget -p nginx/conf
+wget -p nginx/conf
+mkdir -p
+wget -p nginx/site-available
+wget -p nginx/site-available
+mkdir -p site-enabled
+ln -s /etc/nginx/sites-available/.me /etc/nginx/sites-enabled/.me
+ln -s /etc/nginx/sites-available/.me /etc/nginx/sites-enabled/.me
 
 ## Recuperer le docker-compose.yml
 echo "Mise en place du docker compose file"

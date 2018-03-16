@@ -42,7 +42,7 @@ services:
       ports:
         - "80:8080"
       volumes:
-        - /opt/dockers/nginx:/nginx/conf
+        - /opt/dockers/nginx/conf:/nginx
       restart: always
       
   maint:

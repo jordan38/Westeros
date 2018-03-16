@@ -9,11 +9,7 @@
 #Cyan         0;36     Light Cyan    1;36
 #Light Gray   0;37     White         1;37
 
-RED='\033[0;31m'
-NC='\033[0m' # No Color
-printf "I ${RED}love${NC} Stack Overflow\n"
-
-echo -e "I ${RED}love${NC} Stack Overflow"
+printf '\e[1;34m%-6s\e[m' "This is text"
 
 UTILISATEUR_COURANT=$(whoami)
 DDCLIENT_CHEMIN=/opt/dockers/ddclient/config

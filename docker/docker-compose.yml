@@ -12,6 +12,10 @@ services:
       - MYSQL_DATABASE=nextcloud
       - MYSQL_USER=test 
       - MYSQL_PASSWORD=test
+    depends_on:
+      - web
+      - net
+      - maint
     restart: always
   
   app:  
@@ -34,6 +38,8 @@ services:
       - TZ="Europe/Paris"
     volumes:
       - /opt/dockers/ddclient/config:/config
+    depends_on:
+      - web
     restart: always
     
   web:
@@ -54,5 +60,7 @@ services:
     volumes:
       - /opt/dockers/portainer:/data portainer/portainer
       - /var/run/docker.sock:/var/run/docker.sock
+    depends_on:
+      - web
     restart: always
     

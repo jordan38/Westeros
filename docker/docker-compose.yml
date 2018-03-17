@@ -47,8 +47,8 @@ services:
       - "80:8080"
     volumes:
       - /var/log/nginx:/nginx/log
-      - /opt/dockers/nginx/conf/sites-enabled:/nginx/sites-enabled
-      - /opt/dockers/nginx/conf/nginx.conf:/nginx/conf/nginx.conf
+      - /var/nginx/conf/sites-enabled:/nginx/sites-enabled
+      - /var/nginx/conf/nginx.conf:/nginx/conf/nginx.conf
     depends_on:
       - net
     restart: always

@@ -42,7 +42,7 @@ chmod +x /usr/local/bin/docker-compose
 
 ## Récuperer le fichier de conf de ddclient
 echo "Mise en place des fichiers de configuration"
-DDCLIENT_CHEMIN=/opt/dockers/ddclient/config
+DDCLIENT_CHEMIN=/var/ddclient/config
 
 mkdir -p $DDCLIENT_CHEMIN
 wget https://raw.githubusercontent.com/jordan38/Westeros/master/ddclient/ddclient.conf -P $DDCLIENT_CHEMIN
@@ -50,9 +50,9 @@ wget https://raw.githubusercontent.com/jordan38/Westeros/master/ddclient/ddclien
 ## Récuperer les fichiers nginx
 echo "Mise en place des fichiers nginx"
 
-NGINX_CONF_CHEMIN=/opt/dockers/nginx/conf
-NGINX_SITES_AVAILABLE_CHEMIN=/opt/dockers/nginx/conf/sites-available
-NGINX_SITES_ENABLED_CHEMIN=/opt/dockers/nginx/conf/sites-enabled
+NGINX_CONF_CHEMIN=/var/nginx/conf
+NGINX_SITES_AVAILABLE_CHEMIN=/var/nginx/conf/sites-available
+NGINX_SITES_ENABLED_CHEMIN=/var/nginx/conf/sites-enabled
 
 # Les fichiers de configurations globaux
 mkdir -p $NGINX_CONF_CHEMIN

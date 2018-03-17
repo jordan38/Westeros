@@ -69,7 +69,7 @@ ln -s /opt/dockers/nginx/conf/sites-available/portainer.eastwatch.me.conf /opt/d
 
 ## Recuperer le docker-compose.yml
 echo "Mise en place du docker compose file"
-SCRIPT_MAINTENANCE_DOSSIER=~/devs
+SCRIPT_MAINTENANCE_DOSSIER=/home/script
 
 mkdir -p $SCRIPT_MAINTENANCE_DOSSIER
 wget https://raw.githubusercontent.com/jordan38/Westeros/master/docker/docker-compose.yml -P $SCRIPT_MAINTENANCE_DOSSIER

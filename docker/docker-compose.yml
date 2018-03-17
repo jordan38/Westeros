@@ -37,7 +37,7 @@ services:
     environment:
       - TZ="Europe/Paris"
     volumes:
-      - /opt/dockers/ddclient/config:/config
+      - /var/ddclient/config:/config
     restart: always
     
   web:

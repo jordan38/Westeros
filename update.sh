@@ -1,7 +1,7 @@
 #!/bin/bash
 
-CHEMIN_DOSSIER_SCRIPT=~/devs
-CHEMIN_FICHIER_COMPOSE=~/devs/docker-compose.yml
+CHEMIN_DOSSIER_SCRIPT=/home/script
+CHEMIN_FICHIER_COMPOSE=/home/script/docker-compose.yml
 
 if [ -f $CHEMIN_FICHIER_COMPOSE ]; then
     rm -f $file

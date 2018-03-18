@@ -50,8 +50,7 @@ services:
       - "80:8080"
     volumes:
       - /var/nginx/www/html:/nginx/www/html
-      - /var/log/nginx:/nginx/log
-      - /var/nginx/conf/sites-enabled:/nginx/sites-enabled
+      - /var/nginx/conf/sites-enabled:/sites-enabled
       - /var/nginx/conf/nginx.conf:/nginx/conf/nginx.conf
     depends_on:
       - net

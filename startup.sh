@@ -51,6 +51,7 @@ wget https://raw.githubusercontent.com/jordan38/Westeros/master/ddclient/ddclien
 echo "Mise en place des fichiers nginx"
 
 NGINX_CONF_CHEMIN=/var/nginx/conf
+NGINX_HTML_CHEMIN=/var/nginx/www/html
 NGINX_SITES_AVAILABLE_CHEMIN=/var/nginx/conf/sites-available
 NGINX_SITES_ENABLED_CHEMIN=/var/nginx/conf/sites-enabled
 
@@ -60,12 +61,14 @@ wget https://raw.githubusercontent.com/jordan38/Westeros/master/nginx/conf/nginx
 wget https://raw.githubusercontent.com/jordan38/Westeros/master/nginx/conf/mime.types -P $NGINX_CONF_CHEMIN
 # Les fichiers de configuration des servers block
 mkdir -p $NGINX_SITES_AVAILABLE_CHEMIN
-wget https://raw.githubusercontent.com/jordan38/Westeros/master/nginx/sites-available/nextcloud.eastwatch.me.conf -P $NGINX_SITES_AVAILABLE_CHEMIN
-wget https://raw.githubusercontent.com/jordan38/Westeros/master/nginx/sites-available/portainer.eastwatch.me.conf -P $NGINX_SITES_AVAILABLE_CHEMIN
+wget https://raw.githubusercontent.com/jordan38/Westeros/master/nginx/sites-available/nextcloud.eastwatch.me -P $NGINX_SITES_AVAILABLE_CHEMIN
+wget https://raw.githubusercontent.com/jordan38/Westeros/master/nginx/sites-available/portainer.eastwatch.me -P $NGINX_SITES_AVAILABLE_CHEMIN
+wget https://raw.githubusercontent.com/jordan38/Westeros/master/nginx/sites-available/default/default -P $NGINX_SITES_AVAILABLE_CHEMIN
 # Les fichiers de configuration des servers block activés
 mkdir -p $NGINX_SITES_ENABLED_CHEMIN
-ln -s /var/nginx/conf/sites-available/nextcloud.eastwatch.me.conf /var/nginx/conf/sites-enabled/nextcloud.eastwatch.me.conf
-ln -s /var/nginx/conf/sites-available/portainer.eastwatch.me.conf /var/nginx/conf/sites-enabled/portainer.eastwatch.me.conf
+ln -s /var/nginx/conf/sites-available/nextcloud.eastwatch.me /var/nginx/conf/sites-enabled/nextcloud.eastwatch.me
+ln -s /var/nginx/conf/sites-available/portainer.eastwatch.me /var/nginx/conf/sites-enabled/portainer.eastwatch.me
+ln -s /var/nginx/conf/sites-available/default /var/nginx/conf/sites-enabled/default
 
 ## Recuperer le docker-compose.yml
 echo "Mise en place du docker compose file"
@@ -77,4 +80,4 @@ wget https://raw.githubusercontent.com/jordan38/Westeros/master/docker/docker-co
 ## Mise en place des scripts de maintenance
 echo "Mise en place des scripts de maintenance"
 
-wget https://raw.githubusercontent.com/jordan38/Westeros/master/update.sh -P $SCRIPT_MAINTENANCE_DOSSIER
+wget https://github.com/jordan38/Westeros/blob/master/script/update.sh -P $SCRIPT_MAINTENANCE_DOSSIER

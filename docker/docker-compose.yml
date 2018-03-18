@@ -54,7 +54,7 @@ services:
       - net
     restart: always
       
-  maint:
+  sup:
     container_name: portainer
     image: portainer/portainer
     ports:

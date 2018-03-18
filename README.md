@@ -1,6 +1,6 @@
-# Westeros
+#### Comment mettre en place le serveur Westeros
 
-Mise en place du reseau Westeros
+
 
 curl https://raw.githubusercontent.com/jordan38/Westeros/master/startup.sh | sudo bash
 

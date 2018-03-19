@@ -67,7 +67,7 @@ wget https://raw.githubusercontent.com/jordan38/Westeros/master/nginx/sites-avai
 # Les fichiers de configuration des servers block activés
 mkdir -p $NGINX_SITES_ENABLED_CHEMIN
 #ln -s /var/nginx/conf/sites-available/nextcloud.eastwatch.me /var/nginx/conf/sites-enabled/nextcloud.eastwatch.me.conf
-#ln -s /var/nginx/conf/sites-available/portainer.eastwatch.me /var/nginx/conf/sites-enabled/portainer.eastwatch.me.conf
+ln -s /var/nginx/conf/sites-available/portainer.eastwatch.me /var/nginx/conf/sites-enabled/portainer.eastwatch.me.conf
 #ln -s /var/nginx/conf/sites-available/defaut /var/nginx/conf/sites-enabled/defaut.conf
 
 ## Recuperer le docker-compose.yml

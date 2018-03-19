@@ -76,3 +76,6 @@ SCRIPT_MAINTENANCE_DOSSIER=/home/script
 
 mkdir -p $SCRIPT_MAINTENANCE_DOSSIER
 wget https://raw.githubusercontent.com/jordan38/Westeros/master/docker/docker-compose.yml -P $SCRIPT_MAINTENANCE_DOSSIER
+
+#Mis à jour
+apt-get -y upgrade

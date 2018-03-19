@@ -1,6 +1,6 @@
 version: "3"
 services:
-  db:
+  mysql:
     container_name: mysql
     image: mysql
     ports:
@@ -13,10 +13,10 @@ services:
       - MYSQL_USER=test 
       - MYSQL_PASSWORD=test
     depends_on:
-      - web
+      - nginx
     restart: always
   
-  app:  
+  netxcloud:  
     container_name: nextcloud
     image: nextcloud
     ports:
@@ -26,12 +26,12 @@ services:
       - /var/nextcloud/config:/var/www/html/config
       - /var/nextcloud/apps:/var/www/html/apps
     depends_on:
-      - db
-      - net
-      - web
+      - mysql
+      - ddclient
+      - nginx
     restart: always
       
-  net:
+  ddclient:
     container_name: ddclient
     image: linuxserver/ddclient
     environment:
@@ -40,7 +40,7 @@ services:
       - /var/ddclient/config:/config
     restart: always
     
-  web:
+  nginx:
     container_name: nginx
     image: xataz/nginx
     ports:
@@ -52,10 +52,10 @@ services:
       - /var/nginx/conf/sites-enabled:/nginx/sites-enabled
       - /var/nginx/conf/nginx.conf:/nginx/conf/nginx.conf
     depends_on:
-      - net
+      - ddclient
     restart: always
       
-  sup:
+  portainer:
     container_name: portainer
     image: portainer/portainer
     ports:
@@ -64,9 +64,9 @@ services:
       - /var/portainer/data:/data portainer/portainer
       - /var/run/docker.sock:/var/run/docker.sock
     depends_on:
-      - net
-      - web
-      - app
-      - db
+      - ddclient
+      - nginx
+      - netxcloud
+      - mysql
     restart: always
     

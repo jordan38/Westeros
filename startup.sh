@@ -3,7 +3,7 @@
 UTILISATEUR_COURANT=$(whoami)
 
 ## Lancement du script
-#apt-get update
+apt-get update
 
 ## Installation Nano
 echo -e "Installation Nano"
@@ -76,8 +76,3 @@ SCRIPT_MAINTENANCE_DOSSIER=/home/script
 
 mkdir -p $SCRIPT_MAINTENANCE_DOSSIER
 wget https://raw.githubusercontent.com/jordan38/Westeros/master/docker/docker-compose.yml -P $SCRIPT_MAINTENANCE_DOSSIER
-
-## Mise en place des scripts de maintenance
-echo "Mise en place des scripts de maintenance"
-
-wget https://github.com/jordan38/Westeros/blob/master/script/update.sh -P $SCRIPT_MAINTENANCE_DOSSIER

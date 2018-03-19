@@ -5,6 +5,8 @@ UTILISATEUR_COURANT=$(whoami)
 ## Lancement du script
 apt-get update
 
+#apt-get upgrade
+
 ## Installation Nano
 echo -e "Installation Nano"
 
@@ -57,13 +59,13 @@ NGINX_SITES_ENABLED_CHEMIN=/var/nginx/conf/sites-enabled
 
 # Les fichiers de configurations globaux
 mkdir -p $NGINX_CONF_CHEMIN
-wget https://raw.githubusercontent.com/jordan38/Westeros/master/nginx/conf/nginx.conf -P $NGINX_CONF_CHEMIN
-wget https://raw.githubusercontent.com/jordan38/Westeros/master/nginx/conf/mime.types -P $NGINX_CONF_CHEMIN
+#wget https://raw.githubusercontent.com/jordan38/Westeros/master/nginx/conf/nginx.conf -P $NGINX_CONF_CHEMIN
+#wget https://raw.githubusercontent.com/jordan38/Westeros/master/nginx/conf/mime.types -P $NGINX_CONF_CHEMIN
 # Les fichiers de configuration des servers block
 mkdir -p $NGINX_SITES_AVAILABLE_CHEMIN
-wget https://raw.githubusercontent.com/jordan38/Westeros/master/nginx/sites-available/nextcloud.eastwatch.me -P $NGINX_SITES_AVAILABLE_CHEMIN
-wget https://raw.githubusercontent.com/jordan38/Westeros/master/nginx/sites-available/portainer.eastwatch.me -P $NGINX_SITES_AVAILABLE_CHEMIN
-wget https://raw.githubusercontent.com/jordan38/Westeros/master/nginx/sites-available/default/defaut -P $NGINX_SITES_AVAILABLE_CHEMIN
+#wget https://raw.githubusercontent.com/jordan38/Westeros/master/nginx/sites-available/nextcloud.eastwatch.me -P $NGINX_SITES_AVAILABLE_CHEMIN
+#wget https://raw.githubusercontent.com/jordan38/Westeros/master/nginx/sites-available/portainer.eastwatch.me -P $NGINX_SITES_AVAILABLE_CHEMIN
+#wget https://raw.githubusercontent.com/jordan38/Westeros/master/nginx/sites-available/default/defaut -P $NGINX_SITES_AVAILABLE_CHEMIN
 # Les fichiers de configuration des servers block activés
 mkdir -p $NGINX_SITES_ENABLED_CHEMIN
 #cp /var/nginx/conf/sites-available/nextcloud.eastwatch.me /var/nginx/conf/sites-enabled/nextcloud.eastwatch.me.conf

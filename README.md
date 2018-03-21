@@ -8,6 +8,7 @@ Pré-requis :
 
 Executer le script startup 
 > curl https://raw.githubusercontent.com/jordan38/Westeros/master/startup.sh | sudo bash
+
 > reboot now
 
 Mettre à jour le fichier de configuration ddclient 
@@ -15,6 +16,7 @@ Mettre à jour le fichier de configuration ddclient
 
 Exécuter le docker compose file
 > docker-compose -f /home/script/docker-compose.yml pull
+
 > docker-compose -f /home/script/docker-compose.yml up -d
 
 Services :

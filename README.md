@@ -8,12 +8,14 @@ Pré-requis :
 
 Executer le script startup 
 > curl https://raw.githubusercontent.com/jordan38/Westeros/master/startup.sh | sudo bash
+> reboot now
 
 Mettre à jour le fichier de configuration ddclient 
 > /var/ddclient/conf/ddclient.conf
 
 Exécuter le docker compose file
-> sudo docker-compose -f /home/script/docker-compose.yml up -d
+> docker-compose -f /home/script/docker-compose.yml pull
+> docker-compose -f /home/script/docker-compose.yml up -d
 
 Services :
 * ddclient : permet de mettre à jour un nom de domaine avec une IP dynamique

@@ -3,7 +3,7 @@
 UTILISATEUR_COURANT=$(whoami)
 
 ## Lancement du script
-#apt-get update
+apt-get update
 
 #apt-get upgrade
 

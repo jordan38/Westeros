@@ -12,7 +12,7 @@ Executer le script startup
 > reboot now
 
 Mettre à jour le fichier de configuration ddclient 
-> /var/ddclient/conf/ddclient.conf
+> nano /var/ddclient/conf/ddclient.conf
 
 Exécuter le docker compose file
 > docker-compose -f /home/script/docker-compose.yml pull

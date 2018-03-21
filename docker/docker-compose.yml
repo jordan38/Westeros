@@ -38,6 +38,8 @@ services:
       - TZ="Europe/Paris"
     volumes:
       - /var/ddclient/config:/config
+    depends_on
+      - dnsmasq
     restart: always
     
   nginx:
@@ -51,7 +53,18 @@ services:
     depends_on:
       - ddclient
     restart: always
-      
+    
+  dnsmasq:
+    container_name: dnsmasq
+    image: jpillora/dnsmasq
+    ports:
+      - "53:53"
+    volumes:
+      - /var/dnsmasq/dnsmasq.conf:/etc/dnsmasq.conf 
+      - /etc/resolv.conf:/etc/resolv.conf 
+      - /etc/hosts:/etc/hosts
+    restart: always
+    
   portainer:
     container_name: portainer
     image: portainer/portainer

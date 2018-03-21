@@ -38,7 +38,7 @@ services:
       - TZ="Europe/Paris"
     volumes:
       - /var/ddclient/config:/config
-    depends_on
+    depends_on:
       - dnsmasq
     restart: always
     

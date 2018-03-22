@@ -1,1 +1,55 @@
-
+# Docker-compose file pour l'environnement de développement/test
+version: "3"
+services:
+  mysql:
+    ports:
+      - 3306:3306
+    volumes:
+      - /var/mysql/data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=test 
+      - MYSQL_DATABASE=nextcloud
+      - MYSQL_USER=nextcloud_test
+      - MYSQL_PASSWORD=test
+    restart: always
+  
+  netxcloud:  
+    ports:
+      - 8080:80
+    volumes:
+      - /var/nextcloud/data:/var/www/html/data
+      - /var/nextcloud/config:/var/www/html/config
+      - /var/nextcloud/apps:/var/www/html/apps
+    restart: always
+      
+  ddclient:
+    environment:
+      - TZ="Europe/Paris"
+    volumes:
+      - /var/ddclient/config:/config
+    restart: always
+    
+  nginx:
+    ports:
+      - "80:80"
+    volumes:
+      - /var/nginx/conf.d:/etc/nginx/conf.d
+      - /var/nginx/nginx.conf:/etc/nginx/nginx.conf
+    restart: always
+    
+  dnsmasq:
+    ports:
+      - "53:53"
+    volumes:
+      - /var/dnsmasq/dnsmasq.conf:/etc/dnsmasq.conf 
+      - /etc/resolv.conf:/etc/resolv.conf 
+      - /etc/hosts:/etc/hosts
+    restart: always
+    
+  portainer:
+    ports:
+      - "9000:9000"
+    volumes:
+      - /var/portainer/data:/data portainer/portainer
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: always

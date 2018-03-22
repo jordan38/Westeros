@@ -83,3 +83,14 @@ SCRIPT_MAINTENANCE_DOSSIER=/home/script
 
 mkdir -p $SCRIPT_MAINTENANCE_DOSSIER
 wget https://raw.githubusercontent.com/jordan38/Westeros/master/docker/docker-compose.yml -P $SCRIPT_MAINTENANCE_DOSSIER
+
+# Monter les dossier du NAS
+#https://openclassrooms.com/courses/reprenez-le-controle-a-l-aide-de-linux/les-conditions-4
+#if [$1 == "prod"] then
+#mount
+#fi
+
+
+
+
+

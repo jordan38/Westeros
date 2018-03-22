@@ -1,4 +1,4 @@
-
+# Docker-compose file pour l'environnement de production
 version: "3"
 services:
   mysql:

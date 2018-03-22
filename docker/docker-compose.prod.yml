@@ -7,10 +7,10 @@ services:
     volumes:
       - /var/mysql/data:/var/lib/mysql
     environment:
-      - MYSQL_ROOT_PASSWORD=test 
+      - MYSQL_ROOT_PASSWORD= 
       - MYSQL_DATABASE=nextcloud
-      - MYSQL_USER=test 
-      - MYSQL_PASSWORD=test
+      - MYSQL_USER= 
+      - MYSQL_PASSWORD=
     restart: always
   
   netxcloud:  

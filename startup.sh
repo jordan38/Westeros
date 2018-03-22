@@ -49,6 +49,13 @@ DDCLIENT_CHEMIN=/var/ddclient/config
 mkdir -p $DDCLIENT_CHEMIN
 wget https://raw.githubusercontent.com/jordan38/Westeros/master/ddclient/ddclient.conf -P $DDCLIENT_CHEMIN
 
+## Recupérer les fichiers de conf de dnsmasq
+echo "Mise en place des fichiers de dnsmasq"
+DNSMASQ_CHEMIN=/var/dnsmasq
+
+mkdir -p $DNSMASQ_CHEMIN
+wget https://raw.githubusercontent.com/jordan38/Westeros/master/dnsmasq/dnsmasq.conf -P $DDCLIENT_CHEMIN
+
 ## Récuperer les fichiers nginx
 echo "Mise en place des fichiers nginx"
 

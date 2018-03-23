@@ -18,7 +18,7 @@ Mettre à jour le fichier .smbcredentials
 > nano /root/.smbcredentials
 
 Exécuter le docker compose file selon l'environnement
-> docker-compose -f /home/script/docker-compose.yml pull
+> docker-compose -f /home/script pull
 
 > docker-compose -f /home/script/docker-compose.yml -f /home/script/docker-compose.prod.yml up -d
 

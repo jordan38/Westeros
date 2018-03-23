@@ -1,0 +1,2 @@
+# Monter NAS
+//192.168.0.10/share	/media/documents	cifs	credentials=/root/.smbcredentials,iocharset=utf8,gid=1000,uid=1000,_netdev	0	0

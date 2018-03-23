@@ -91,23 +91,24 @@ else
    wget https://raw.githubusercontent.com/jordan38/Westeros/master/docker/docker-compose.override.yml -P $SCRIPT_MAINTENANCE_DOSSIER
 fi
 
+docker-compose -f /home/script/docker-compose.yml pull
+
 # Monter les dossier du NAS
 
-DATA_NAS_DOSSIER=/media/data
-IP_NAS=10.0.0.101
-NAS="# Monter NAS
-//192.168.0.10/share	/media/documents	cifs	guest,iocharset=utf8,gid=100,uid=1000,_netdev	0	0" 
+#DATA_NAS_DOSSIER=/media/data
+#IP_NAS=10.0.0.101
+#NAS="# Monter NAS
+#//192.168.0.10/share	/media/documents	cifs	guest,iocharset=utf8,gid=100,uid=1000,_netdev	0	0" 
 
-
-if [ ${1} = "prod" ]; then
-  mkdir -p $DATA_NAS_DOSSIER
+#if [ ${1} = "prod" ]; then
+#  mkdir -p $DATA_NAS_DOSSIER
   
-  cp /etc/fstab ./fstab.save
+#  cp /etc/fstab ./fstab.save
 
-  #wget .smbcredentials /root
+#wget .smbcredentials /root
 
-  echo "$NAS" > /etc/fstab
-fi
+#  echo "$NAS" > /etc/fstab
+#fi
 
 
 

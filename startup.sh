@@ -85,10 +85,22 @@ mkdir -p $SCRIPT_MAINTENANCE_DOSSIER
 wget https://raw.githubusercontent.com/jordan38/Westeros/master/docker/docker-compose.yml -P $SCRIPT_MAINTENANCE_DOSSIER
 
 # Monter les dossier du NAS
-#https://openclassrooms.com/courses/reprenez-le-controle-a-l-aide-de-linux/les-conditions-4
-#if [$1 == "prod"] then
-#mount
-#fi
+
+DATA_NAS_DOSSIER=/media/data
+IP_NAS=10.0.0.101
+NAS="# Monter NAS
+//192.168.0.10/share	/media/documents	cifs	guest,iocharset=utf8,gid=100,uid=1000,_netdev	0	0" 
+
+
+if [ ${1} = "prod" ]; then
+  mkdir -p $DATA_NAS_DOSSIER
+  
+  cp /etc/fstab ./fstab.save
+
+  #wget .smbcredentials /root
+
+  echo "$NAS" > /etc/fstab
+fi
 
 
 

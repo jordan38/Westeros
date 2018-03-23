@@ -7,7 +7,7 @@ Pré-requis :
 * Définir les Zones DNS sur https://www.ovh.com/manager/web/index.html
 
 Executer le script startup selon l'environnement 
-> curl https://raw.githubusercontent.com/jordan38/Westeros/master/startup.sh | sudo bash {environnement}
+> curl https://raw.githubusercontent.com/jordan38/Westeros/master/startup.sh | sudo bash prod
 
 > reboot now
 

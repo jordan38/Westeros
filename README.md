@@ -14,6 +14,9 @@ Executer le script startup selon l'environnement
 Mettre à jour le fichier de configuration ddclient 
 > nano /var/ddclient/conf/ddclient.conf
 
+Mettre à jour le fichier .smbcredentials
+> nano /root/.smbcredentials
+
 Exécuter le docker compose file selon l'environnement
 > docker-compose -f /home/script/docker-compose.yml pull
 

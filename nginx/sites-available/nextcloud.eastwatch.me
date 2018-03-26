@@ -18,6 +18,7 @@
 #
 server {
 	listen 80;
+	server_name  nextcloud.eastwatch.me  www.nextcloud.eastwatch.me;
 
 	location / {
 		proxy_pass http://nextcloud:9000/;	

@@ -54,7 +54,8 @@ echo "Mise en place des fichiers de dnsmasq"
 DNSMASQ_CHEMIN=/var/dnsmasq
 
 mkdir -p $DNSMASQ_CHEMIN
-wget https://raw.githubusercontent.com/jordan38/Westeros/master/dnsmasq/dnsmasq.conf -P $DNSMASQ_CHEMIN
+wget https://raw.githubusercontent.com/jordan38/Westeros/master/dnsmasq/dnsmasq.base.conf -P $DNSMASQ_CHEMIN
+wget https://raw.githubusercontent.com/jordan38/Westeros/master/dnsmasq/westeros.conf -P $DNSMASQ_CHEMIN
 
 ## Récuperer les fichiers nginx
 echo "Mise en place des fichiers nginx"

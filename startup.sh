@@ -92,7 +92,7 @@ else
    wget https://raw.githubusercontent.com/jordan38/Westeros/master/docker/docker-compose.override.yml -P $SCRIPT_MAINTENANCE_DOSSIER
 fi
 
-docker-compose -f /home/script pull
+docker-compose pull
 
 # Monter les dossier du NAS
 

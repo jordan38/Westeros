@@ -39,7 +39,7 @@ services:
     ports:
       - "53:53"
     volumes:
-      - /var/dnsmasq/dnsmasq.conf:/etc/dnsmasq.conf 
+      - /var/dnsmasq:/etc/dnsmasq 
     restart: always
     
   portainer:

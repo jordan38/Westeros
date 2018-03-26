@@ -40,8 +40,6 @@ services:
       - "53:53"
     volumes:
       - /var/dnsmasq/dnsmasq.conf:/etc/dnsmasq.conf 
-      - /etc/resolv.conf:/etc/resolv.conf 
-      - /etc/hosts:/etc/hosts
     restart: always
     
   portainer:

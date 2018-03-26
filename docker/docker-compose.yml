@@ -32,7 +32,7 @@ services:
     
   dnsmasq:
     container_name: dnsmasq
-    image: jpillora/dnsmasq
+    image: storytel/dnsmasq
     restart: always
     
   portainer:

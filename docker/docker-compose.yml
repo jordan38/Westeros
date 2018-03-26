@@ -33,6 +33,8 @@ services:
   dnsmasq:
     container_name: dnsmasq
     image: storytel/dnsmasq
+    cap_drop:
+      - NET_ADMIN
     restart: always
     
   portainer:

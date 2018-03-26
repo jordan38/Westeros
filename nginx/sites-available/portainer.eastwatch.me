@@ -18,6 +18,7 @@
 #
 server {
 	listen 80;
+	server_name  portainer.eastwatch.me  www.portainer.eastwatch.me;
 
 	location / {
 		proxy_pass http://portainer:9000/;	

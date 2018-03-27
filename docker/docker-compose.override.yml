@@ -11,7 +11,7 @@ services:
       - MYSQL_DATABASE=nextcloud_dev
     restart: always
   
-  netxcloud:  
+  nextcloud:  
     ports:
       - 8080:80
     volumes:

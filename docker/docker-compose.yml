@@ -47,4 +47,3 @@ services:
       - mysql
     restart: always
     
-  network_mode: "host"

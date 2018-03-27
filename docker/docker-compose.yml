@@ -43,7 +43,7 @@ services:
     depends_on:
       - ddclient
       - nginx
-      - netxcloud
+      - nextcloud
       - mysql
     restart: always
     

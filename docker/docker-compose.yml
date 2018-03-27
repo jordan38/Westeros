@@ -7,7 +7,7 @@ services:
       - nginx
     restart: always
   
-  netxcloud:  
+  nextcloud:  
     container_name: nextcloud
     image: nextcloud
     depends_on:

@@ -12,7 +12,7 @@ services:
       - MYSQL_USER=nextcloud 
     restart: always
   
-  netxcloud:  
+  nextcloud:  
     ports:
       - 8080:80
     volumes:

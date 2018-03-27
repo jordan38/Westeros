@@ -62,8 +62,8 @@ services:
       - back-network
     restart: always
     
-    networks:
-      front-network:
-        driver: host
-      back-network:
-        driver: host
+ networks:
+   front-network:
+     driver: host
+   back-network:
+     driver: host

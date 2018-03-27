@@ -6,7 +6,7 @@ services:
     depends_on:
       - nginx
     networks:
-      - front-network
+      - back-network
     restart: always
   
   nextcloud:  
@@ -17,7 +17,7 @@ services:
       - ddclient
       - nginx
     networks:
-      - front-network
+      - back-network
     restart: always
       
   ddclient:
@@ -26,7 +26,7 @@ services:
     depends_on:
       - dnsmasq
     networks:
-      - front-network
+      - back-network
     restart: always
     
   nginx:
@@ -36,6 +36,7 @@ services:
       - ddclient
     networks:
       - front-network
+      - back-network
     restart: always
     
   dnsmasq:
@@ -45,6 +46,7 @@ services:
       - NET_ADMIN
     networks:
       - front-network
+      - back-network
     restart: always
     
   portainer:
@@ -57,8 +59,11 @@ services:
       - mysql
     networks:
       - front-network
+      - back-network
     restart: always
     
     networks:
       front-network:
+        driver: host
+      back-network:
         driver: host

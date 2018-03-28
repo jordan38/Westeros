@@ -10,8 +10,8 @@ services:
       - MYSQL_ALLOW_EMPTY_PASSWORD=yes
       - MYSQL_DATABASE=nextcloud_dev
     restart: always
-  
-  nextcloud:  
+
+  nextcloud:
     ports:
       - 8080:80
     volumes:
@@ -19,14 +19,14 @@ services:
       - /var/nextcloud/config:/var/www/html/config
       - /var/nextcloud/apps:/var/www/html/apps
     restart: always
-      
+
   ddclient:
     environment:
       - TZ="Europe/Paris"
     volumes:
       - /var/ddclient/config:/config
     restart: always
-    
+
   nginx:
     ports:
       - "80:80"
@@ -34,14 +34,12 @@ services:
       - /var/nginx/conf.d:/etc/nginx/conf.d
       - /var/nginx/nginx.conf:/etc/nginx/nginx.conf
     restart: always
-    
+
   dnsmasq:
-    ports:
-      - "53:53"
     volumes:
-      - /var/dnsmasq:/etc/dnsmasq 
+      - /var/dnsmasq:/etc/dnsmasq
     restart: always
-    
+
   portainer:
     ports:
       - "9000:9000"

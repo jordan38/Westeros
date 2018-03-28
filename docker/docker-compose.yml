@@ -18,6 +18,8 @@ services:
   ddclient:
     container_name: ddclient
     image: linuxserver/ddclient
+    depends_on:
+      - nginx
     restart: always
     
   nginx:
@@ -30,6 +32,8 @@ services:
     image: storytel/dnsmasq
     cap_drop:
       - NET_ADMIN
+    depends_on:
+      - nginx
     restart: always
     
   portainer:

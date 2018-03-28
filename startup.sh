@@ -86,11 +86,7 @@ mkdir -p $SCRIPT_MAINTENANCE_DOSSIER
 
 wget https://raw.githubusercontent.com/jordan38/Westeros/master/docker/docker-compose.yml -P $SCRIPT_MAINTENANCE_DOSSIER
 
-if [ ${1} = "prod" ]; then
-   wget https://raw.githubusercontent.com/jordan38/Westeros/master/docker/docker-compose.prod.yml -P $SCRIPT_MAINTENANCE_DOSSIER
-else
-   wget https://raw.githubusercontent.com/jordan38/Westeros/master/docker/docker-compose.override.yml -P $SCRIPT_MAINTENANCE_DOSSIER
-fi
+cd $SCRIPT_MAINTENANCE_DOSSIER
 
 docker-compose pull
 
@@ -110,8 +106,4 @@ docker-compose pull
 
 #  echo "$NAS" > /etc/fstab
 #fi
-
-
-
-
 

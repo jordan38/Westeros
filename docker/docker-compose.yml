@@ -5,8 +5,6 @@ services:
     image: mysql
     depends_on:
       - nginx
-    networks:
-      - back-network
     restart: always
   
   nextcloud:  
@@ -14,29 +12,17 @@ services:
     image: nextcloud
     depends_on:
       - mysql
-      - ddclient
       - nginx
-    networks:
-      - back-network
     restart: always
       
   ddclient:
     container_name: ddclient
     image: linuxserver/ddclient
-    depends_on:
-      - dnsmasq
-    networks:
-      - back-network
     restart: always
     
   nginx:
     container_name: nginx
     image: nginx:alpine
-    depends_on:
-      - ddclient
-    networks:
-      - front-network
-      - back-network
     restart: always
     
   dnsmasq:
@@ -44,9 +30,6 @@ services:
     image: storytel/dnsmasq
     cap_drop:
       - NET_ADMIN
-    networks:
-      - front-network
-      - back-network
     restart: always
     
   portainer:
@@ -57,13 +40,4 @@ services:
       - nginx
       - nextcloud
       - mysql
-    networks:
-      - front-network
-      - back-network
     restart: always
-    
- networks:
-   front-network:
-     driver: host
-   back-network:
-     driver: host

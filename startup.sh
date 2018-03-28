@@ -88,7 +88,13 @@ wget https://raw.githubusercontent.com/jordan38/Westeros/master/docker/docker-co
 
 cd $SCRIPT_MAINTENANCE_DOSSIER
 
-docker-compose pull
+if [ ${1} = "prod" ]; then	+cd $SCRIPT_MAINTENANCE_DOSSIER
+   wget https://raw.githubusercontent.com/jordan38/Westeros/master/docker/docker-compose.prod.yml -P $SCRIPT_MAINTENANCE_DOSSIER	
+else	
+   wget https://raw.githubusercontent.com/jordan38/Westeros/master/docker/docker-compose.override.yml -P $SCRIPT_MAINTENANCE_DOSSIER	
+fi
+
+docker-compose up -d
 
 # Monter les dossier du NAS
 

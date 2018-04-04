@@ -3,7 +3,7 @@ version: "3"
 services:
   mysql:
     ports:
-      - 3306:3306
+      - "3306:3306"
     volumes:
       - /var/mysql/data:/var/lib/mysql
     environment:
@@ -13,7 +13,7 @@ services:
 
   nextcloud:
     ports:
-      - 8080:80
+      - "8080:80"
     volumes:
       - /var/nextcloud/data:/var/www/html/data
       - /var/nextcloud/config:/var/www/html/config
@@ -30,6 +30,7 @@ services:
   nginx:
     ports:
       - "80:80"
+      - "443:443"
     volumes:
       - /var/nginx/conf.d:/etc/nginx/conf.d
       - /var/nginx/nginx.conf:/etc/nginx/nginx.conf
@@ -41,6 +42,7 @@ services:
       - "443:443"
     volumes:
       - /etc/letsencrypt:/var/lib/letsencrypt
+      - /var/lib/letsencrypt:/var/lib/letsencrypt
     restart: always
     
   dnsmasq:

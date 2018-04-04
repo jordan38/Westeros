@@ -18,9 +18,47 @@
 #
 server {
 	listen 80;
-	server_name  nextcloud.eastwatch.me  www.nextcloud.eastwatch.me;
+	server_name nextcloud.eastwatch.me  www.nextcloud.eastwatch.me;
 
 	location / {
-		proxy_pass http://nextcloud:80/;	
+		proxy_pass https://$server_name$request_uri;	
 	}
+}
+
+server {
+	listen 443 ssl http2; #Nginx > 1.9.5
+	server_name nextcloud.eastwatch.me  www.nextcloud.eastwatch.me;
+
+	location / {
+		proxy_pass https://nextcloud:80/;	
+	}
+
+	## Certificates
+	ssl_certificate /etc/letsencrypt/live/domain/cert.pem;
+	ssl_certificate_key /etc/letsencrypt/live/domain/key.pem;
+	ssl_trusted_certificate /chemin/vers/chain.pem;
+
+	## Protocol
+	#ssl_protocols TLSv1.2;
+
+	## Diffie-Hellman
+	#ssl_ecdh_curve secp384r1;
+
+	## Ciphers
+	#ssl_ciphers EECDH+CHACHA20:EECDH+AESGCM:EECDH+AES;
+	#ssl_prefer_server_ciphers on;
+
+	# OCSP Stapling
+	#resolver 80.67.169.12 80.67.169.40 valid=300s;
+	#resolver_timeout 5s;
+	#ssl_stapling on;
+	#ssl_stapling_verify on;
+
+	## TLS parameters
+	#ssl_session_cache shared:SSL:10m;
+	#ssl_session_timeout 5m;
+	#ssl_session_tickets off;
+
+	## HSTS
+	#add_header Strict-Transport-Security "max-age=15552000; includeSubdomains; preload";
 }

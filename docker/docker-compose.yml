@@ -26,11 +26,6 @@ services:
     container_name: nginx
     image: nginx:alpine
     restart: always
-  
-  letsencrypt:
-    container_name: letsencrypt
-    image: certbot/certbot
-    restart: always
     
   dnsmasq:
     container_name: dnsmasq

@@ -18,6 +18,8 @@ services:
   ddclient:
     container_name: ddclient
     image: linuxserver/ddclient
+    environment:
+      - TZ="Europe/Paris"
     depends_on:
       - nginx
     restart: always
@@ -39,6 +41,13 @@ services:
   emby:
     container_name: emby
     image: emby/embyserver
+    restart: always
+    
+  rutorrent:
+    container_name: emby
+    image: linuxserver/rutorrent
+    environment:
+      - TZ="Europe/Paris"
     restart: always
     
   portainer:

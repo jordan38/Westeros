@@ -35,6 +35,11 @@ services:
     depends_on:
       - nginx
     restart: always
+  
+  emby:
+    container_name: emby
+    image: emby/embyserver
+    restart: always
     
   portainer:
     container_name: portainer
@@ -44,4 +49,5 @@ services:
       - nginx
       - nextcloud
       - mysql
+      - emby
     restart: always

@@ -44,7 +44,7 @@ services:
     restart: always
     
   rutorrent:
-    container_name: emby
+    container_name: rutorrent
     image: linuxserver/rutorrent
     environment:
       - TZ="Europe/Paris"

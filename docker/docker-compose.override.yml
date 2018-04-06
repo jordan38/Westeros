@@ -44,6 +44,16 @@ services:
       - UID=105
       - GID=100
       - GIDLISt=100
+  
+  rutorrent:
+    ports:
+      - "8181:80"
+      - "5000:5000"
+      - "51413:51413"
+      - "6881:6881/udp"
+    volumes:
+      - /var/rutorrent/config:/config
+      - /var/rutorrent/downloads:/downloads
 
   portainer:
     ports:

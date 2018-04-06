@@ -73,10 +73,12 @@ wget https://raw.githubusercontent.com/jordan38/Westeros/master/nginx/conf/mime.
 mkdir -p $NGINX_SITES_AVAILABLE_CHEMIN
 wget https://raw.githubusercontent.com/jordan38/Westeros/master/nginx/sites-available/nextcloud.eastwatch.me -P $NGINX_SITES_AVAILABLE_CHEMIN
 wget https://raw.githubusercontent.com/jordan38/Westeros/master/nginx/sites-available/portainer.eastwatch.me -P $NGINX_SITES_AVAILABLE_CHEMIN
+wget https://raw.githubusercontent.com/jordan38/Westeros/master/nginx/sites-available/emby.eastwatch.me -P $NGINX_SITES_AVAILABLE_CHEMIN
 # Les fichiers de configuration des servers block activés
 mkdir -p $NGINX_SITES_ENABLED_CHEMIN
 cp /var/nginx/sites-available/nextcloud.eastwatch.me /var/nginx/conf.d/nextcloud.eastwatch.me.conf
 cp /var/nginx/sites-available/portainer.eastwatch.me /var/nginx/conf.d/portainer.eastwatch.me.conf
+cp /var/nginx/sites-available/emby.eastwatch.me /var/nginx/conf.d/emby.eastwatch.me.conf
 
 ## Recuperer le docker-compose.yml
 echo "Mise en place du docker compose file"

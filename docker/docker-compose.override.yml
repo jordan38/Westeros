@@ -19,8 +19,6 @@ services:
       - /var/nextcloud/apps:/var/www/html/apps
 
   ddclient:
-    environment:
-      - TZ="Europe/Paris"
     volumes:
       - /var/ddclient/config:/config
 

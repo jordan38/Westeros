@@ -27,6 +27,8 @@ services:
   nginx:
     container_name: nginx
     image: nginx:alpine
+    environment:
+      - TZ="Europe/Paris"
     restart: always
     
   dnsmasq:
@@ -48,6 +50,15 @@ services:
     image: linuxserver/rutorrent
     environment:
       - TZ="Europe/Paris"
+    restart: always
+  
+  couchpotato:
+    container_name: couchpotato
+    image: linuxserver/couchpotato
+    environment:
+      - TZ="Europe/Paris"
+    depends_on:
+      - rutorrent
     restart: always
     
   portainer:

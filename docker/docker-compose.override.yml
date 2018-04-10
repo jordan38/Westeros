@@ -63,6 +63,15 @@ services:
       - /var/couchpotato/movies:/movies
       - /var/downloads:/downloads
       
+  sonarr:
+    ports:
+      - "8989:8989"
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /var/sonarr/config:/config
+      - /var/sonarr/tv:/tv
+      - /var/downloads:/downloads
+      
   portainer:
     ports:
       - "9000:9000"

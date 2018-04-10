@@ -58,7 +58,6 @@ services:
   couchpotato:
     ports:
       - "5050:5050"
-      - "8282:80"
     volumes:
       - /var/couchpotato/config:/config
       - /var/couchpotato/movies:/movies

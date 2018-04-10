@@ -61,6 +61,13 @@ services:
       - rutorrent
     restart: always
     
+  sonarr:
+    container_name: sonarr
+    image: linuxserver/sonarr
+    environment:
+      - TZ="Europe/Paris"
+    restart: always
+    
   portainer:
     container_name: portainer
     image: portainer/portainer

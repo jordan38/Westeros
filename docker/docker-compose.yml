@@ -36,8 +36,6 @@ services:
     image: storytel/dnsmasq
     cap_drop:
       - NET_ADMIN
-    depends_on:
-      - nginx
     restart: always
   
   emby:
@@ -66,15 +64,11 @@ services:
     image: linuxserver/sonarr
     environment:
       - TZ="Europe/Paris"
+    depends_on:
+      - rutorrent
     restart: always
     
   portainer:
     container_name: portainer
     image: portainer/portainer
-    depends_on:
-      - ddclient
-      - nginx
-      - nextcloud
-      - mysql
-      - emby
     restart: always

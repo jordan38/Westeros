@@ -27,5 +27,9 @@ Exécuter le docker compose file selon l'environnement
 Services :
 * ddclient : permet de mettre à jour un nom de domaine avec une IP dynamique
 * Nginx : reverse proxy
-* Portainer : supervision des conteneurs docker
-* Nextcloud : cloud privé 
+* Portainer : supervision de conteneur docker
+* Nextcloud : stockage de fichiers
+* Couchpotato : recherche de film
+* Emby : vidéothéque
+* Sonarr : recherche de série
+* RuTorrent : logiciel de pear to pear

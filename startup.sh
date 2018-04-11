@@ -74,11 +74,17 @@ mkdir -p $NGINX_SITES_AVAILABLE_CHEMIN
 wget https://raw.githubusercontent.com/jordan38/Westeros/master/nginx/sites-available/nextcloud.eastwatch.me -P $NGINX_SITES_AVAILABLE_CHEMIN
 wget https://raw.githubusercontent.com/jordan38/Westeros/master/nginx/sites-available/portainer.eastwatch.me -P $NGINX_SITES_AVAILABLE_CHEMIN
 wget https://raw.githubusercontent.com/jordan38/Westeros/master/nginx/sites-available/emby.eastwatch.me -P $NGINX_SITES_AVAILABLE_CHEMIN
+wget https://raw.githubusercontent.com/jordan38/Westeros/master/nginx/sites-available/rutorrent.eastwatch.me -P $NGINX_SITES_AVAILABLE_CHEMIN
+wget https://raw.githubusercontent.com/jordan38/Westeros/master/nginx/sites-available/sonarr.eastwatch.me -P $NGINX_SITES_AVAILABLE_CHEMIN
+wget https://raw.githubusercontent.com/jordan38/Westeros/master/nginx/sites-available/couchpotato.eastwatch.me -P $NGINX_SITES_AVAILABLE_CHEMIN
 # Les fichiers de configuration des servers block activés
 mkdir -p $NGINX_SITES_ENABLED_CHEMIN
 cp /var/nginx/sites-available/nextcloud.eastwatch.me /var/nginx/conf.d/nextcloud.eastwatch.me.conf
 cp /var/nginx/sites-available/portainer.eastwatch.me /var/nginx/conf.d/portainer.eastwatch.me.conf
 cp /var/nginx/sites-available/emby.eastwatch.me /var/nginx/conf.d/emby.eastwatch.me.conf
+cp /var/nginx/sites-available/rutorrent.eastwatch.me /var/nginx/conf.d/rutorrent.eastwatch.me.conf
+cp /var/nginx/sites-available/sonarr.eastwatch.me /var/nginx/conf.d/sonarr.eastwatch.me.conf
+cp /var/nginx/sites-available/couchpotato.eastwatch.me /var/nginx/conf.d/couchpotato.eastwatch.me.conf
 
 ## Recuperer le docker-compose.yml
 echo "Mise en place du docker compose file"

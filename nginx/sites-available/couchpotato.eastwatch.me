@@ -18,9 +18,14 @@
 #
 server {
 	listen 80;
+	listen [::]:80;
 	server_name  couchpotato.eastwatch.me  www.couchpotato.eastwatch.me;
 
 	location / {
 		proxy_pass http://couchpotato:5050/;	
+	}
+	
+	location ~ /.well-known/acme-challenge {
+        	allow all;
 	}
 }

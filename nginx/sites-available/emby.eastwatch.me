@@ -18,9 +18,14 @@
 #
 server {
 	listen 80;
+	listen [::]:80;
 	server_name  emby.eastwatch.me  www.emby.eastwatch.me;
 
 	location / {
 		proxy_pass http://emby:8096/;	
+	}
+	
+	location ~ /.well-known/acme-challenge {
+        	allow all;
 	}
 }

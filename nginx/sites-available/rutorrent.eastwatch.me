@@ -18,9 +18,14 @@
 #
 server {
 	listen 80;
+	listen [::]:80;
 	server_name  rutorrent.eastwatch.me  www.ruttorent.eastwatch.me;
 
 	location / {
 		proxy_pass http://rutorrent:8181/;	
 	}
+	
+	location ~ /.well-known/acme-challenge {
+        	allow all;
+    	}
 }

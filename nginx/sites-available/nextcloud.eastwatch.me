@@ -18,10 +18,15 @@
 #
 server {
 	listen 80;
+	listen [::]:80;
 	server_name nextcloud.eastwatch.me  www.nextcloud.eastwatch.me;
 
 	location / {
 		proxy_pass https://$server_name$request_uri;	
+	}
+	
+	location ~ /.well-known/acme-challenge {
+        	allow all;
 	}
 }
 

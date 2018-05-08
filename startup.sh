@@ -86,6 +86,11 @@ cp /var/nginx/sites-available/rutorrent.eastwatch.me /var/nginx/conf.d/rutorrent
 cp /var/nginx/sites-available/sonarr.eastwatch.me /var/nginx/conf.d/sonarr.eastwatch.me.conf
 cp /var/nginx/sites-available/couchpotato.eastwatch.me /var/nginx/conf.d/couchpotato.eastwatch.me.conf
 
+## Preparer letsencrypt
+mkdir -p /var/letsencrypt
+mkdir -p /var/lib/letsencrypt
+mkdir -p /var/log/letsencrypt
+
 ## Recuperer le docker-compose.yml
 echo "Mise en place du docker compose file"
 SCRIPT_MAINTENANCE_DOSSIER=/home/script

@@ -21,7 +21,7 @@ server {
 	listen [::]:80;
 	server_name nextcloud.eastwatch.me  www.nextcloud.eastwatch.me;
 	
-	location ^~ /.well-known/acme-challenge {
+	location ~ /.well-known/acme-challenge {
         	allow all;
 	}
 
@@ -41,8 +41,8 @@ server {
 	}
 
 	## Certificates
-	ssl_certificate /etc/letsencrypt/live/nextcloud.eastwatch.me/fullchain.pem;
-	ssl_certificate_key /etc/letsencrypt/live/nextcloud.eastwatch.me/privkey.pem;;
+	#ssl_certificate /etc/letsencrypt/live/nextcloud.eastwatch.me/fullchain.pem;
+	#ssl_certificate_key /etc/letsencrypt/live/nextcloud.eastwatch.me/privkey.pem;
 	#ssl_trusted_certificate /chemin/vers/chain.pem;
 
 	## Protocol

@@ -29,6 +29,7 @@ services:
     volumes:
       - /var/nginx/conf.d:/etc/nginx/conf.d
       - /var/nginx/nginx.conf:/etc/nginx/nginx.conf
+      - /var/letsencrypt/live:/etc/nginx/certs
       
   dnsmasq:
     volumes:

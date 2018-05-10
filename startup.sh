@@ -90,6 +90,7 @@ cp /var/nginx/sites-available/couchpotato.eastwatch.me /var/nginx/conf.d/couchpo
 mkdir -p /var/letsencrypt
 mkdir -p /var/lib/letsencrypt
 mkdir -p /var/log/letsencrypt
+mkdir -p /var/letsencrypt/data
 
 ## Recuperer le docker-compose.yml
 echo "Mise en place du docker compose file"
